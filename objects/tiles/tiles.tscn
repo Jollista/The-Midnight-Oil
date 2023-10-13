@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ottf1q5rpfby"]
+
+[ext_resource type="PackedScene" uid="uid://dgx8p550y357q" path="res://objects/tiles/tile scenes/carpet.tscn" id="1_godpp"]
+[ext_resource type="PackedScene" uid="uid://wdh3pmy6vu7c" path="res://objects/tiles/tile scenes/ceiling.tscn" id="2_p2khl"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="Carpet" parent="." instance=ExtResource("1_godpp")]
+
+[node name="Ceiling" parent="." instance=ExtResource("2_p2khl")]
