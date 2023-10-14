@@ -52,10 +52,10 @@ func get_grid_position(x, y):
 # Get input and move accordingly, using animation players for choppy animation
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("left"):
-		animation.play("turn_left")
+		animation.queue("turn_left")
 		update_facing(-1)
 	if Input.is_action_just_pressed("right"):
-		animation.play("turn_right")
+		animation.queue("turn_right")
 		update_facing(1)
 	if Input.is_action_just_pressed("forward"):
 		print("forward input received")
@@ -93,7 +93,7 @@ func move(direction:int):
 		player_index += direction * player_direction # set current to new
 		
 		# play move animation
-		animation.play("move")
+		animation.queue("move")
 	else:
 		print("can't move")
 		print("player_index = ", player_index)
