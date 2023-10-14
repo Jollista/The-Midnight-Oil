@@ -22,5 +22,5 @@
 	{"Text":"Self-loathing isn't going to help either."},
 	{"Text":"You're just tired."},
 	{"Text":"Probably hungry and thirsty, too. Fast food once at noon isn't the healthiest."},
-	{"Text":"You decide to get up and find something to eat."},
+	{"Text":"You decide to get up and find something to eat.", "Signal":"Homework.json"},
 ]

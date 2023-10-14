@@ -1,0 +1,16 @@
+[
+	{"Text":"You sit down and get back to work, downing your cheap, cold coffee fast so you don't have to taste it.", "Voice":"KB1.wav"},
+	{"Text":"You type away, thinking of nothing but the task before you."},
+	{"Text":"You let your ramen grow cold."},
+	{"Text":"You make it past the halfway mark and breathe a sigh of relief. You shouldn't be so hard on yourself. Everyone procrastinates work all the time."},
+	{"Text":"You wind up a forkful of noodles and check the time."},
+	{"Text":"11:42 PM."},
+	{"Text":"Shit."},
+	{"Text":"You quickly compose an email to your professor explaining in the best, most professional language you can manage that you need an extension."},
+	{"Text":"Hopefully enough other students had the same idea and tomorrow you'll wake up to a positive reply."},
+	{"Text":"[wave]Creeeeaaaaak[/wave]", "Voice":"mute", "SFX":"door_creak.wav"},
+	{"Text":"Must be Joselyn."},
+	{"Text":"You hear her lightly step from the front door to her room."},
+	{"Text":"With your email sent and nothing left to do but hope, you turn in what you have so far and give up for the night."},
+	{"Text":"Before you sleep, though, you should bring the mug and fork back to the kitchen at least. You can wash them in the morning.", "Signal":"BetterHurryBack.json"},
+]

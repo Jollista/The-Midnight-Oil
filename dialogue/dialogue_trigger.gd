@@ -36,7 +36,7 @@ func choose_dialogue():
 # On flag received, check to see if the flag_name matches the name of the currently stopped at
 # dialogue. If it does, pop_front from stop and dialogues to pass stop
 func _flag_received(flag_name):
-	var current_stop_name = get_json_name(stops[0])
+	var current_stop_name = "" if len(stops) == 0 else get_json_name(stops[0])
 	if flag_name == current_stop_name:
 		stops.pop_front()
 		dialogues.pop_front()

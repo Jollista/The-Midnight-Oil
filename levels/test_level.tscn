@@ -146,6 +146,7 @@ visible = false
 
 [node name="Column4" type="Node3D" parent="GridMap/Row3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+visible = false
 
 [node name="Column5" type="Node3D" parent="GridMap/Row3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
@@ -157,6 +158,7 @@ visible = false
 
 [node name="Column7" type="Node3D" parent="GridMap/Row3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+visible = false
 
 [node name="Column8" type="Node3D" parent="GridMap/Row3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
@@ -211,6 +213,7 @@ visible = false
 
 [node name="Column1" type="Node3D" parent="GridMap/Row5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+visible = false
 
 [node name="Column2" type="Node3D" parent="GridMap/Row5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
@@ -226,6 +229,7 @@ visible = false
 
 [node name="Column5" type="Node3D" parent="GridMap/Row5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 
 [node name="Column6" type="Node3D" parent="GridMap/Row5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
@@ -300,6 +304,10 @@ player_direction = Vector2(0, -1)
 [node name="bed" parent="." instance=ExtResource("4_tap1y")]
 transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -1, 0.330628, 1.13724)
 
+[node name="BedTrigger" parent="." instance=ExtResource("7_kqnyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.40648, 0.5, 0.5, 0.905568)
+dialogues = Array[String](["res://dialogue/JSONs/Bed.json", "res://dialogue/JSONs/Sleep.json"])
+
 [node name="Puter" parent="." instance=ExtResource("5_l8fc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951508, 0.439113, -0.50488)
 
@@ -308,6 +316,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.143568, 0.0481302, 0)
 light_color = Color(0.305882, 1, 1, 1)
 light_energy = 0.333
 light_size = 0.165
+
+[node name="PuterTrigger" parent="." instance=ExtResource("7_kqnyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+dialogues = Array[String](["res://dialogue/JSONs/Intro.json", "STOP", "res://dialogue/JSONs/BackToWork.json", "STOP"])
+stops = Array[String](["res://dialogue/JSONs/Nauseous.json", "res://dialogue/JSONs/Cleanup.json"])
 
 [node name="TV" parent="." instance=ExtResource("5_l8fc6")]
 transform = Transform3D(-4.37114e-08, 0, 1.44894, 0, 1.38531, 0, -1, 0, -6.3335e-08, 8.33904, 0.493139, 5)
@@ -318,15 +331,20 @@ light_color = Color(0.305882, 1, 1, 1)
 light_energy = 0.333
 light_size = 0.56
 
-[node name="DialogueCanvas" parent="." instance=ExtResource("6_pd3gj")]
+[node name="TVTrigger" parent="." instance=ExtResource("7_kqnyo")]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 8.31631, 0.499211, 4.58097)
+dialogues = Array[String](["res://dialogue/JSONs/TV.json"])
 
-[node name="DialogueTrigger" parent="." instance=ExtResource("7_kqnyo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
-dialogues = Array[String](["res://dialogue/JSONs/Intro.json", "STOP"])
-stops = Array[String](["res://dialogue/JSONs/Nauseous.json"])
+[node name="DialogueCanvas" parent="." instance=ExtResource("6_pd3gj")]
 
 [node name="FrontDoor" parent="." instance=ExtResource("9_7vof4")]
 transform = Transform3D(3.7749e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 3.7749e-08, 8.5, 0.5, 2.04902)
+
+[node name="FrontDoorTrigger" parent="." instance=ExtResource("7_kqnyo")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 8.50127, 0.499211, 2.5)
+dialogues = Array[String](["res://dialogue/JSONs/OldFriends.json", "STOP", "res://dialogue/JSONs/Unlocked.json"])
+stops = Array[String](["res://dialogue/JSONs/FrontDoor.json"])
+metadata/_edit_group_ = true
 
 [node name="JoselynDoor" parent="." instance=ExtResource("9_7vof4")]
 transform = Transform3D(3.7749e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 3.7749e-08, 3.5, 0.5, 3.04902)
@@ -345,8 +363,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.8066
 
 [node name="StoveTrigger" parent="." instance=ExtResource("7_kqnyo")]
 transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 9.50127, 0.499211, 3.5)
-dialogues = Array[String](["res://dialogue/JSONs/Stove.json", "STOP"])
-stops = Array[String](["res://dialogue/JSONs/Cooking.json"])
+dialogues = Array[String](["STOP", "res://dialogue/JSONs/Stove.json", "STOP"])
+stops = Array[String](["res://dialogue/JSONs/Homework.json", "res://dialogue/JSONs/Cooking.json"])
 
 [node name="MicrowaveTrigger" parent="." instance=ExtResource("7_kqnyo")]
 transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 9.50127, 0.499211, 2.5)
+dialogues = Array[String](["STOP", "res://dialogue/JSONs/Microwave.json", "STOP", "res://dialogue/JSONs/ReturningTheMug.json"])
+stops = Array[String](["res://dialogue/JSONs/Homework.json", "res://dialogue/JSONs/BetterHurryBack.json"])
