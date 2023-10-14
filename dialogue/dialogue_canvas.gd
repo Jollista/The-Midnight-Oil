@@ -189,7 +189,7 @@ func next_line():
 		timer.set_wait_time(text_speed)
 		
 		print("voice check")
-		if not muted:
+		if not muted:# and not voice.playing:
 			voice.play() # play funny little sound hahaha make me laugh
 		
 		# delay between characters made visible
