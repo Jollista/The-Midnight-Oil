@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://clfhceewjbf6h"]
+[gd_scene load_steps=14 format=3 uid="uid://clfhceewjbf6h"]
 
 [ext_resource type="PackedScene" uid="uid://dg2akv6ltt1bk" path="res://player/player.tscn" id="1_3r6gn"]
 [ext_resource type="Script" path="res://levels/test_level.gd" id="1_8adfg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0iaaj7df8xe" path="res://dialogue/dialogue_canvas.tscn" id="6_pd3gj"]
 [ext_resource type="PackedScene" uid="uid://djvtopsm8vgdd" path="res://dialogue/dialogue_trigger.tscn" id="7_kqnyo"]
 [ext_resource type="PackedScene" uid="uid://o4e4k83urv6q" path="res://objects/door.blend" id="9_7vof4"]
+[ext_resource type="PackedScene" uid="uid://c0tfecdg8j1my" path="res://objects/kitchenette.blend" id="10_8n351"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hft1u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -338,3 +339,6 @@ transform = Transform3D(-8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 
 
 [node name="LaundryDoor" parent="." instance=ExtResource("9_7vof4")]
 transform = Transform3D(-0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, -0.353553, 4.66013, 0.5, 4.37918)
+
+[node name="kitchenette" parent="." instance=ExtResource("10_8n351")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.80662, 0.095114, 3)
