@@ -118,6 +118,8 @@ func next_line():
 			image.texture = load(img) # set it to specified image
 		else: # no default image
 			image.texture = null # set portrait to null
+	else:
+		image.texture = null # by default, no image
 	
 	# Play sound effect if specified
 	if dialogue[current_dialogue].has("SFX"):
@@ -150,12 +152,6 @@ func next_line():
 					var stream = AudioStreamRandomizer.new() # create AudioStreamRandomizer
 					stream.add_stream(0, load(voice_sound)) # set its stream to character's voice
 					voice.set_stream(stream) # set randomizer as voice's stream
-	
-	# reset animation by default, or don't if needed
-	if dialogue[current_dialogue].has("ResetSprites"):
-		match dialogue[current_dialogue]["ResetSprites"]:
-			"false":
-				reset_sprites = false
 	
 	# increment index
 	current_dialogue += 1

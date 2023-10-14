@@ -28,7 +28,8 @@ func _ready():
 	# get grid from gridmap parent
 	grid = grid_map.get_grid()
 	
-	#print(grid)
+	for i in grid:
+		print(i)
 	
 	# make sure grid isn't empty
 	if len(grid) == 0:
@@ -129,7 +130,7 @@ func grid_location_exists(location:Vector2):
 
 # assume location exists, check if location is valid (node was visible)
 func grid_location_valid(location:Vector2):
-	print("location valid = ", true if grid[location.y][location.x].w > 0 else false)
+	print("location valid = ", true if grid[location.x][location.y].w > 0 else false)
 	print("grid[location.x][location.y] = ", grid[location.x][location.y])
 	return true if grid[location.x][location.y].w > 0 else false
 
