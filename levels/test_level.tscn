@@ -306,7 +306,7 @@ transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -1, 0.
 
 [node name="BedTrigger" parent="." instance=ExtResource("7_kqnyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.40648, 0.5, 0.5, 0.905568)
-dialogues = Array[String](["res://dialogue/JSONs/Bed.json", "res://dialogue/JSONs/Sleep.json", "STOP", "res://dialogue/JSONs/ENDBed.json"])
+dialogues = Array[String](["STOP", "res://dialogue/JSONs/ENDBed.json"])
 stops = Array[String](["res://dialogue/JSONs/NoBedNow.json"])
 
 [node name="Puter" parent="." instance=ExtResource("5_l8fc6")]
