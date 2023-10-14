@@ -1,0 +1,10 @@
+[
+	{"Text":"You decide to head to bed. You've toiled enough for one night.", "Voice":"KB1.wav"},
+	{"Text":"You lie down and close your eyes.", "Image":"icon.svg"},
+	{"Text":"After hours of staring into the blue light of your monitor, keeping your eyelids shut almost stings.", "Image":"icon.svg"},
+	{"Text":"You try not to compare yourself to Joselyn, and you try to sleep.", "Image":"icon.svg"},
+	{"Text":"Just as you're about to drift off, you hear footsteps approaching your door.", "Image":"icon.svg", "SFX":"creaking.wav"},
+	{"Text":"Your phone buzzes.", "Image":"icon.svg"},
+	{"Text":"A message from Joselyn, saying that she won't be home tonight.", "Image":"icon.svg"},
+	{"Text":"Your door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav", "Signal":"ENDING_REACHED"},
+]

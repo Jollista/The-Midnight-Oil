@@ -63,6 +63,10 @@ func get_grid_position(x, y):
 
 # Get input and move accordingly, using animation players for choppy animation
 func _physics_process(_delta):
+	# quit on quit input
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+	# otherwise, get movement input
 	if Input.is_action_just_pressed("left"):
 		animation.queue("turn_left")
 		update_facing(-1)

@@ -306,7 +306,8 @@ transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -1, 0.
 
 [node name="BedTrigger" parent="." instance=ExtResource("7_kqnyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.40648, 0.5, 0.5, 0.905568)
-dialogues = Array[String](["res://dialogue/JSONs/Bed.json", "res://dialogue/JSONs/Sleep.json"])
+dialogues = Array[String](["res://dialogue/JSONs/Bed.json", "res://dialogue/JSONs/Sleep.json", "STOP", "res://dialogue/JSONs/ENDBed.json"])
+stops = Array[String](["res://dialogue/JSONs/NoBedNow.json"])
 
 [node name="Puter" parent="." instance=ExtResource("5_l8fc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951508, 0.439113, -0.50488)
@@ -354,6 +355,11 @@ transform = Transform3D(3.7749e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 3.7749e-08, 6.5,
 
 [node name="BathroomDoor" parent="." instance=ExtResource("9_7vof4")]
 transform = Transform3D(-8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 0.5, 0.5, 4.04902)
+
+[node name="BathroomTrigger" parent="." instance=ExtResource("7_kqnyo")]
+transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 0.759497, 0.5, 0.5, 3.51996)
+dialogues = Array[String](["STOP", "res://dialogue/JSONs/ENDBathroom.json"])
+stops = Array[String](["res://dialogue/JSONs/Bathroom.json"])
 
 [node name="LaundryDoor" parent="." instance=ExtResource("9_7vof4")]
 transform = Transform3D(-0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, -0.353553, 4.66013, 0.5, 4.37918)

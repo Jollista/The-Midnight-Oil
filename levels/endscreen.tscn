@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://7v0g2esrq6uh"]
+
+[ext_resource type="Script" path="res://levels/endscreen.gd" id="1_rrne1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rrne1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = 90.0
+offset_top = 91.0
+offset_right = 2010.0
+offset_bottom = 1171.0
+bbcode_enabled = true
+text = "[wave]THANK YOU FOR PLAYING![/wave]"
+
+[node name="endscreen" type="CanvasLayer" parent="."]

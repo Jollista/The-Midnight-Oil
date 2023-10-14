@@ -10,7 +10,9 @@ follow_viewport_scale = 0.2
 script = ExtResource("1_bhwnn")
 
 [node name="Image" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(190, 85)
+scale = Vector2(5, 5)
 texture = ExtResource("2_qd6rc")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
