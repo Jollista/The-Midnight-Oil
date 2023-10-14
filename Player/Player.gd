@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var player_index:Vector2 # player's location index in matrix
 @export var player_direction:Vector2 = Vector2(-1,0) # player's direction, NSEW
 var prev_player_index:Vector2
-var facing_index = 0
+var facing_index
 
 var grid # 2d matrix of vector3 global positions
 
@@ -40,8 +40,22 @@ func _ready():
 	var v3 = get_grid_position(player_index.x, player_index.y)
 	set_global_position(v3)
 	
-	# face initial direction
+	# to the programmer: make sure player's rotation is on 90 degree angles and matches player_direction
 	
+	# update facing_index according to player_direction
+	match player_direction:
+		FACING[NORTH]:
+			print("facing NORTH initially")
+			facing_index = NORTH
+		FACING[EAST]:
+			print("facing EAST initially")
+			facing_index = EAST
+		FACING[SOUTH]:
+			print("facing SOUTH initially")
+			facing_index = SOUTH
+		FACING[WEST]:
+			print("facing WEST initially")
+			facing_index = WEST
 
 # get the Vector3 position component from Vector4 from grid
 func get_grid_position(x, y):
@@ -115,7 +129,8 @@ func grid_location_exists(location:Vector2):
 
 # assume location exists, check if location is valid (node was visible)
 func grid_location_valid(location:Vector2):
-	print("location valid = ", true if grid[location.x][location.y].w > 0 else false)
+	print("location valid = ", true if grid[location.y][location.x].w > 0 else false)
+	print("grid[location.x][location.y] = ", grid[location.x][location.y])
 	return true if grid[location.x][location.y].w > 0 else false
 
 # Take a step, used for moving animation

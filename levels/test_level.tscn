@@ -16,6 +16,8 @@ sky_material = SubResource("ProceduralSkyMaterial_hft1u")
 [sub_resource type="Environment" id="Environment_w1632"]
 background_mode = 2
 sky = SubResource("Sky_qvpwx")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
@@ -286,7 +288,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_3r6gn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50232, 1.63135, -0.509823)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.50232, 2.61727, -0.509823)
+player_direction = Vector2(0, -1)
 
 [node name="bed" parent="." instance=ExtResource("4_tap1y")]
 transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -1, 0.330628, 1.13724)
