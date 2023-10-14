@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg2akv6ltt1bk"]
+[gd_scene load_steps=9 format=3 uid="uid://dg2akv6ltt1bk"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_agnp8"]
+[ext_resource type="AudioStream" uid="uid://cegs2jcuspmpx" path="res://sound/effects/creaking.wav" id="2_oa8oq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qrtkb"]
 size = Vector3(1, 0.708345, 0.722296)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6lbpw"]
+streams_count = 1
+stream_0/stream = ExtResource("2_oa8oq")
+stream_0/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_vov8v"]
 resource_name = "move"
@@ -28,6 +34,21 @@ tracks/0/keys = {
 "method": &"step"
 }]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_6lbpw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ptbsg"]
 resource_name = "turn_left"
@@ -96,3 +117,5 @@ shape = SubResource("BoxShape3D_qrtkb")
 libraries = {
 "": SubResource("AnimationLibrary_ath48")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
