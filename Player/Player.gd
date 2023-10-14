@@ -40,7 +40,7 @@ func _ready():
 	var v3 = get_grid_position(player_index.x, player_index.y)
 	set_global_position(v3)
 	
-	# to the programmer: make sure player's rotation is on 90 degree angles and matches player_direction
+	# to the programmer: make surea player's rotation is on 90 degree angles and matches player_direction
 	
 	# update facing_index according to player_direction
 	match player_direction:
