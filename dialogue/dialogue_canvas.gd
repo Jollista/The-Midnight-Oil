@@ -12,17 +12,12 @@ const SLOW = 0.1
 
 # reference to components
 @onready var dialogue_box = $DialogueBox
-@onready var display_name = $TextLabels/Name
+#@onready var display_name = $TextLabels/Name
 @onready var chat = $TextLabels/Text
-@onready var portrait = $Image
+@onready var image = $Image
 @onready var voice = $Voice
 @onready var sfx = $SFX
 @onready var timer = $Delay
-
-# character_name used to get character specific folder for portraits
-var character_name
-# default portrait is the portrait used for the character given no portrait
-var default_portrait
 
 signal dialogue_ended
 
@@ -50,9 +45,6 @@ func _ready():
 
 func _process(_delta):
 	# allows player to skip dialogue animation
-	print("skipping = ", skipping)
-	print("active = ", active)
-	print("finished = ", finished)
 	if skipping or active and (Input.is_action_just_pressed("interact")):
 		if finished: # go to next line
 			next_line()
@@ -117,35 +109,19 @@ func next_line():
 		return
 	
 	# update text, works with bbcode
-	display_name.text = dialogue[current_dialogue]["Name"]
 	chat.text = dialogue[current_dialogue]["Text"]
 	
-	# get character for file/directory purposes for portraits and voice and stuff
-	if dialogue[current_dialogue].has("Character"):
-		# set character_name and default portrait
-		character_name = dialogue[current_dialogue]["Character"]
-		default_portrait = "res://Dialogue/Portraits/" + character_name + "/default.png"
-		
-		# get voice
-		var voice_sound = "res://Dialogue/Sounds/Voices/" + character_name + ".wav"
-		if FileAccess.file_exists(voice_sound):
-			var stream = AudioStreamRandomizer.new() # create AudioStreamRandomizer
-			stream.add_stream(0, load(voice_sound)) # set its stream to character's voice
-			voice.set_stream(stream) # set randomizer as voice's stream
-	
 	# Update portrait if specified
-	if dialogue[current_dialogue].has("Portrait"):
-		var img = "res://Dialogue/Portraits/" + character_name + "/" + dialogue[current_dialogue]["Portrait"] + ".png"
+	if dialogue[current_dialogue].has("Image"):
+		var img = "res://dialogue/images/" + dialogue[current_dialogue]["Image"]
 		if FileAccess.file_exists(img): # if specified image exists
-			portrait.texture = load(img) # set it to specified image
-		elif FileAccess.file_exists(default_portrait): # else, if character has a default image
-			portrait.texture = "res://Dialogue/Portraits/" + character_name + "/default.png" # set it to that
+			image.texture = load(img) # set it to specified image
 		else: # no default image
-			portrait.texture = null # set portrait to null
+			image.texture = null # set portrait to null
 	
 	# Play sound effect if specified
 	if dialogue[current_dialogue].has("SFX"):
-		var effect = "res://Dialogue/Sounds/Sound Effects/" + dialogue[current_dialogue]["SFX"]
+		var effect = "res://sound/effects/" + dialogue[current_dialogue]["SFX"]
 		# if file exists
 		if FileAccess.file_exists(effect):
 			# load and play it
@@ -162,14 +138,18 @@ func next_line():
 			_:
 				timer.set_wait_time(NORM)
 	
-	# mute voice if needed
+	# get voice
+	# if mute, short circuit
 	if dialogue[current_dialogue].has("Voice"):
 		match dialogue[current_dialogue]["Voice"]:
 			"mute":
 				muted = true
-				muted_voice.emit()
 			_:
-				muted = false
+				var voice_sound = "res://sound/voices/" + dialogue[current_dialogue]["Voice"]
+				if FileAccess.file_exists(voice_sound):
+					var stream = AudioStreamRandomizer.new() # create AudioStreamRandomizer
+					stream.add_stream(0, load(voice_sound)) # set its stream to character's voice
+					voice.set_stream(stream) # set randomizer as voice's stream
 	
 	# reset animation by default, or don't if needed
 	if dialogue[current_dialogue].has("ResetSprites"):

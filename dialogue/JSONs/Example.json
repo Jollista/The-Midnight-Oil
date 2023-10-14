@@ -1,4 +1,4 @@
 [
-	{"Character":"CHARACTER", "Name":"NAME", "Text":"TEXT", "Portrait":"blank"},
-	{"Name":"???", "Text":"MORE TEXT"},
+	{"Text":"TEXT", "Voice":"Coal.wav"},
+	{"Text":"MORE TEXT"},
 ]
