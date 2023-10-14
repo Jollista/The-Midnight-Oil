@@ -23,7 +23,7 @@ func choose_dialogue():
 	if len(dialogues) == 0 and len(stops) == 0:
 		queue_free()
 		return "res://dialogue/JSONs/Nothing.json"
-	elif len(stops) != 0:
+	elif len(dialogues) == 0 and len(stops) != 0:
 		return stops[0]
 	
 	# if current dialogue to be played at dialogues isn't a filepath, but is instead

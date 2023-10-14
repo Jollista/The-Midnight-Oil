@@ -168,12 +168,12 @@ func next_line():
 	print("chat.text = ", chat.text)
 	while chat.visible_characters < len(chat.text):
 		
-		print("visible-ifying character")
-		print("visible characters = ", chat.visible_characters, "\nout of = ", len(chat.text))
+		#print("visible-ifying character")
+		#print("visible characters = ", chat.visible_characters, "\nout of = ", len(chat.text))
 		chat.visible_characters += 1 # make next char visible
 		
 		# pause for punctuation
-		print("punctuation juice")
+		#print("punctuation juice")
 		match chat.text.substr(chat.visible_characters-1, 1):
 			".":
 				timer.start(text_speed*10)
@@ -185,18 +185,18 @@ func next_line():
 				timer.start(text_speed*6)
 				await timer.timeout
 		
-		print("resetting timer speed")
+		#print("resetting timer speed")
 		timer.set_wait_time(text_speed)
 		
-		print("voice check")
+		#print("voice check")
 		if not muted:# and not voice.playing:
 			voice.play() # play funny little sound hahaha make me laugh
 		
 		# delay between characters made visible
-		print("text-speed")
+		#print("text-speed")
 		timer.start(text_speed)
 		await timer.timeout # delay while loop until timeout
-		print("finished waiting, next character\n")
+		#print("finished waiting, next character\n")
 	
 	finished = true
 	

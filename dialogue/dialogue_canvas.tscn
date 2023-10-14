@@ -6,6 +6,7 @@
 
 [node name="DialogueCanvas" type="CanvasLayer"]
 process_mode = 3
+follow_viewport_scale = 0.2
 script = ExtResource("1_bhwnn")
 
 [node name="Image" type="Sprite2D" parent="."]
