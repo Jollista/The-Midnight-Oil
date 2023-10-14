@@ -11,7 +11,7 @@
 	{"Text":"In fact, you always feel more tired than usual when you have some. Though, you only drink coffee when you need to stay up late, which seems to be about every day now."},
 	{"Text":"Perhaps you have a bit of confirmation bias."},
 	{"Text":"You haven't had a good night's sleep in... Months? How long ago had it been since the start of the semester?"},
-	{"Text":"The beep of the microwave snaps you to your senses, and even more sobering is the time displayed once the beeping stops."},
+	{"Text":"The beep of the microwave snaps you to your senses, and even more sobering is the time displayed once the beeping stops.", "SFX":"microwave.wav"},
 	{"Text":"11:32? That can't be right. No, it isn't right."},
 	{"Text":"You didn't take on much responsibility around the apartment, so you told your roommates that you'd at least set up the microwave clock."},
 	{"Text":"Worthless time vampire that it is, you gave up not long after. No one used it for the time anyways."},

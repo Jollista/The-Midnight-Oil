@@ -4,7 +4,7 @@
 	{"Text":"After hours of staring into the blue light of your monitor, keeping your eyelids shut almost stings.", "Image":"icon.svg"},
 	{"Text":"You try not to compare yourself to Joselyn, and you try to sleep.", "Image":"icon.svg"},
 	{"Text":"Just as you're about to drift off, you hear footsteps approaching your door.", "Image":"icon.svg", "SFX":"creaking.wav"},
-	{"Text":"Your phone buzzes.", "Image":"icon.svg"},
+	{"Text":"Your phone buzzes.", "Image":"icon.svg", "SFX":"phone.wav"},
 	{"Text":"A message from Joselyn, saying that she won't be home tonight.", "Image":"icon.svg"},
 	{"Text":"Your door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav"},
 	{"Text":"","Signal":"ENDING_REACHED"}

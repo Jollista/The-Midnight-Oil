@@ -1,7 +1,7 @@
 [
 	{"Text":"Before heading to bed, you decide to stop by the bathroom. You don't like waking up in the middle of the night and fumbling about, so it's best to sort that out now than later.", "Voice":"KB1.wav"},
 	{"Text":"Afterwards, you turn on the sink to wash your hands.", "Image":"icon.svg", "SFX":"sink.wav"},
-	{"Text":"Your phone buzzes.", "Image":"icon.svg"},
+	{"Text":"Your phone buzzes.", "Image":"icon.svg", "SFX":"phone.wav"},
 	{"Text":"You open it to see it's a message from Joselyn, saying that she won't be home tonight.", "Image":"icon.svg"},
 	{"Text":"The door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav"},
 	{"Text":"","Signal":"ENDING_REACHED"}

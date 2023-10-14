@@ -3,7 +3,7 @@
 	{"Text":"You poke your head inside to check on her.", "Image":"icon.svg"},
 	{"Text":"It's hard to see in the darkness of her room, but you can't make out any Joselyn shaped lumps in the bed.", "Image":"icon.svg"},
 	{"Text":"As you squint, you notice a figure in the room, taller and more broad than the only person you'd expect.", "Image":"icon.svg"},
-	{"Text":"Your phone buzzes.", "Image":"icon.svg"},
+	{"Text":"Your phone buzzes.", "Image":"icon.svg", "SFX":"phone.wav"},
 	{"Text":"You hear the wood floor creak as the figure inside turns to look at you.", "Image":"icon.svg", "SFX":"door_creak.wav"},
 	{"Text":"","Signal":"ENDING_REACHED"}
 ]
