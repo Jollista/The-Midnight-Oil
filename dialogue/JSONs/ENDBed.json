@@ -6,5 +6,6 @@
 	{"Text":"Just as you're about to drift off, you hear footsteps approaching your door.", "Image":"icon.svg", "SFX":"creaking.wav"},
 	{"Text":"Your phone buzzes.", "Image":"icon.svg"},
 	{"Text":"A message from Joselyn, saying that she won't be home tonight.", "Image":"icon.svg"},
-	{"Text":"Your door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav", "Signal":"ENDING_REACHED"},
+	{"Text":"Your door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav"},
+	{"Text":"","Signal":"ENDING_REACHED"}
 ]

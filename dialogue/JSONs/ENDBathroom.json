@@ -3,5 +3,6 @@
 	{"Text":"Afterwards, you turn on the sink to wash your hands.", "Image":"icon.svg", "SFX":"sink.wav"},
 	{"Text":"Your phone buzzes.", "Image":"icon.svg"},
 	{"Text":"You open it to see it's a message from Joselyn, saying that she won't be home tonight.", "Image":"icon.svg"},
-	{"Text":"The door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav", "Signal":"ENDING_REACHED"},
+	{"Text":"The door creaks open.", "Image":"icon.svg", "SFX":"door_creak.wav"},
+	{"Text":"","Signal":"ENDING_REACHED"}
 ]
