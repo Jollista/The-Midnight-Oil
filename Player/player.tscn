@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://player/Player.gd" id="1_agnp8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qrtkb"]
+size = Vector3(1, 0.708345, 0.722296)
 
 [sub_resource type="Animation" id="Animation_vov8v"]
 resource_name = "move"
