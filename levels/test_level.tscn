@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://clfhceewjbf6h"]
+[gd_scene load_steps=7 format=3 uid="uid://clfhceewjbf6h"]
 
 [ext_resource type="PackedScene" path="res://Player/player.tscn" id="1_3r6gn"]
 [ext_resource type="MeshLibrary" uid="uid://dx0kjiwghtaco" path="res://objects/tiles/tiles.tres" id="2_vcj0v"]
+[ext_resource type="Script" path="res://levels/grid.gd" id="3_a5m05"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hft1u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,7 +27,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_3r6gn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297074, 5.29525, -0.0584196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502317, 0.631349, -0.509823)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("2_vcj0v")
@@ -34,4 +35,5 @@ cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(0, 1, 1, 1, 1, 1, -65536, 0, 0, -1, 0, 0, -1, 65535, 0, -65536, 65535, 0, 65535, 1, 1, 65534, 1, 1, 65534, 0, 1, 65534, 65535, 1, 65534, 65534, 1, 65535, 65534, 1, 0, 65534, 1, 1, 65534, 1, 1, 65535, 1, 1, 0, 1)
 }
+script = ExtResource("3_a5m05")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
