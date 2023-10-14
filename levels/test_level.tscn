@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://clfhceewjbf6h"]
+[gd_scene load_steps=12 format=3 uid="uid://clfhceewjbf6h"]
 
 [ext_resource type="PackedScene" uid="uid://dg2akv6ltt1bk" path="res://player/player.tscn" id="1_3r6gn"]
+[ext_resource type="Script" path="res://levels/test_level.gd" id="1_8adfg"]
 [ext_resource type="MeshLibrary" uid="uid://dx0kjiwghtaco" path="res://objects/tiles/tiles.tres" id="2_vcj0v"]
 [ext_resource type="Script" path="res://levels/gridmap.gd" id="2_w8i0s"]
 [ext_resource type="PackedScene" uid="uid://baouo45x2bov5" path="res://objects/bed.blend" id="4_tap1y"]
-[ext_resource type="PackedScene" uid="uid://dcxemtv2vfyhv" path="res://objects/puter.blend" id="5_l8fc6"]
+[ext_resource type="PackedScene" uid="uid://cubdlfkdnug6j" path="res://objects/puter.blend" id="5_l8fc6"]
 [ext_resource type="PackedScene" uid="uid://bu0iaaj7df8xe" path="res://dialogue/dialogue_canvas.tscn" id="6_pd3gj"]
 [ext_resource type="PackedScene" uid="uid://djvtopsm8vgdd" path="res://dialogue/dialogue_trigger.tscn" id="7_kqnyo"]
 
@@ -24,6 +25,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_8adfg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w1632")
@@ -296,19 +298,19 @@ player_direction = Vector2(0, -1)
 [node name="bed" parent="." instance=ExtResource("4_tap1y")]
 transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -1, 0.330628, 1.13724)
 
-[node name="puter" parent="." instance=ExtResource("5_l8fc6")]
+[node name="Puter" parent="." instance=ExtResource("5_l8fc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951508, 0.439113, -0.50488)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="puter"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Puter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.143568, 0.0481302, 0)
 light_color = Color(0.305882, 1, 1, 1)
 light_energy = 0.333
 light_size = 0.165
 
-[node name="puter2" parent="." instance=ExtResource("5_l8fc6")]
+[node name="TV" parent="." instance=ExtResource("5_l8fc6")]
 transform = Transform3D(-4.37114e-08, 0, 1.44894, 0, 1.38531, 0, -1, 0, -6.3335e-08, 8.33904, 0.493139, 5)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="puter2"]
+[node name="OmniLight3D" type="OmniLight3D" parent="TV"]
 transform = Transform3D(1, 0, 0, 0, 0.721859, 0, 0, 0, 0.690162, 0.256344, 0.0841756, -0.0470052)
 light_color = Color(0.305882, 1, 1, 1)
 light_energy = 0.333
@@ -318,3 +320,4 @@ light_size = 0.56
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("7_kqnyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+dialogues = Array[String](["res://dialogue/JSONs/Intro.json"])

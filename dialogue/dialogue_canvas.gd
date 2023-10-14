@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal flag(flag_name:String)
+
 # path to default dialogue file json (should never play)
 @export var dialogue_file = ""
 
@@ -152,6 +154,9 @@ func next_line():
 					var stream = AudioStreamRandomizer.new() # create AudioStreamRandomizer
 					stream.add_stream(0, load(voice_sound)) # set its stream to character's voice
 					voice.set_stream(stream) # set randomizer as voice's stream
+	
+	if dialogue[current_dialogue].has("Signal"):
+		flag.emit(dialogue[current_dialogue]["Signal"])
 	
 	# increment index
 	current_dialogue += 1

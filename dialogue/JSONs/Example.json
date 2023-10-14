@@ -1,4 +1,6 @@
 [
 	{"Text":"TEXT", "Voice":"Coal.wav"},
 	{"Text":"MORE TEXT", "Image":"icon.svg"},
+	{"Text":"And finally. Testing text juice and signal flag. .?!...???!!!"},
+	{"Text":"S", "Signal":"ExampleSignal"}
 ]
