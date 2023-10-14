@@ -28,9 +28,6 @@ func _ready():
 	# get grid from gridmap parent
 	grid = grid_map.get_grid()
 	
-	for i in grid:
-		print(i)
-	
 	# make sure grid isn't empty
 	if len(grid) == 0:
 		print("EMPTY GRID")
@@ -138,16 +135,12 @@ func grid_location_valid(location:Vector2):
 # steps is the number of steps required to fully move from one position to
 # the next, used to create a choppy walk animation
 func step(steps:int):
-	print("-----------stepping")
 	# calculate distance from starting position to desired position
 	var from = get_grid_position(prev_player_index.x, prev_player_index.y)
 	var to = get_grid_position(player_index.x, player_index.y)
-	print("From = ", from)
-	print("To = ", to)
 	
 	# divide into steps
 	var distance = (to - from)/steps
-	print("Distance = (from - to) / steps = ", distance)
 	
 	# move one step
 	set_position(get_position()+distance)
