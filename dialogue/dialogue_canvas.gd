@@ -50,6 +50,9 @@ func _ready():
 
 func _process(_delta):
 	# allows player to skip dialogue animation
+	print("skipping = ", skipping)
+	print("active = ", active)
+	print("finished = ", finished)
 	if skipping or active and (Input.is_action_just_pressed("interact")):
 		if finished: # go to next line
 			next_line()
@@ -70,9 +73,11 @@ func start_dialogue(filepath:String=""):
 	
 	# initial yield before it matters bc that one messes with 
 	# chat.visible_characters for some reason
+	print("initial timer check")
 	timer.set_wait_time(text_speed)
 	timer.start()
 	await timer.timeout
+	print("initial timer check works")
 	
 	# reset index and set visible/active true
 	current_dialogue = 0
@@ -179,10 +184,15 @@ func next_line():
 	chat.visible_characters = 0
 	
 	# write phrase
+	print("chat.text = ", chat.text)
 	while chat.visible_characters < len(chat.text):
+		
+		print("visible-ifying character")
+		print("visible characters = ", chat.visible_characters, "\nout of = ", len(chat.text))
 		chat.visible_characters += 1 # make next char visible
 		
 		# pause for punctuation
+		print("punctuation juice")
 		match chat.text.substr(chat.visible_characters-1, 1):
 			".":
 				timer.start(text_speed*10)
@@ -194,13 +204,19 @@ func next_line():
 				timer.start(text_speed*6)
 				await timer.timeout
 		
+		print("resetting timer speed")
 		timer.set_wait_time(text_speed)
 		
+		print("voice check")
 		if not muted:
 			voice.play() # play funny little sound hahaha make me laugh
+		
 		# delay between characters made visible
-		timer.start()
+		print("text-speed")
+		timer.start(text_speed)
 		await timer.timeout # delay while loop until timeout
+		print("finished waiting, next character\n")
+	
 	finished = true
 	
 	# restore text_speed

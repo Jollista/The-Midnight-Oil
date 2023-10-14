@@ -1,3 +1,4 @@
 [
-	{"Character":"CHARACTER", "Name":"NAME", "Text":"TEXT", "Portrait":"blank"}
+	{"Character":"CHARACTER", "Name":"NAME", "Text":"TEXT", "Portrait":"blank"},
+	{"Name":"???", "Text":"MORE TEXT"},
 ]

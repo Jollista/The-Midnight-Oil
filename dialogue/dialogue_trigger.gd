@@ -20,7 +20,7 @@ func _process(_delta):
 # choose a dialogue and then have dialogue_canvas start it
 func trigger_dialogue():
 	# stop checking for input for starting dialogue
-	set_process(false)
+	#set_process(false)
 	
 	# choose a dialogue
 	var dialogue = choose_dialogue()
@@ -35,7 +35,7 @@ func choose_dialogue():
 # called when signal received dialogue_ended
 func dialogue_over():
 	# start checking for input for starting dialogue again
-	set_process(true)
+	#set_process(true)
 	print("dialogue end signal received")
 
 
