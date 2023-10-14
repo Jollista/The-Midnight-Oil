@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var grid_map = get_parent().get_node("GridMap") # GridMap keeps track of tiles
 
 @export var player_index:Vector2 # player's location index in matrix
-@export var player_direction:Vector2 = Vector2(0,-1) # player's direction, NSEW
+@export var player_direction:Vector2 = Vector2(-1,0) # player's direction, NSEW
 var prev_player_index:Vector2
 var facing_index = 0
 
@@ -16,7 +16,7 @@ const NORTH = 0
 const SOUTH = 2
 const EAST = 1
 const WEST = 3
-const FACING = [Vector2(0,-1), Vector2(1,0), Vector2(0,1), Vector2(-1,0)]
+const FACING = [Vector2(-1,0), Vector2(0,1), Vector2(1,0), Vector2(0,-1)]
 
 # constant references to NSEW rotation vectors
 const NORTH_ROTATION = Vector3(0,0,0)
@@ -28,7 +28,7 @@ func _ready():
 	# get grid from gridmap parent
 	grid = grid_map.get_grid()
 	
-	print(grid)
+	#print(grid)
 	
 	# make sure grid isn't empty
 	if len(grid) == 0:
@@ -41,19 +41,12 @@ func _ready():
 	set_global_position(v3)
 	
 	# face initial direction
-	match player_direction:
-		FACING[NORTH]:
-			set_global_rotation_degrees(NORTH_ROTATION)
-		FACING[SOUTH]:
-			set_global_rotation_degrees(SOUTH_ROTATION)
-		FACING[EAST]:
-			set_global_rotation_degrees(EAST_ROTATION)
-		FACING[WEST]:
-			set_global_rotation_degrees(WEST_ROTATION)
+	
 
 # get the Vector3 position component from Vector4 from grid
 func get_grid_position(x, y):
 	var v4 = grid[x][y]
+	print("Getting grid position at [", x, "][", y, "]: ", v4)
 	return Vector3(v4.x, v4.y, v4.z)
 
 # Get input and move accordingly, using animation players for choppy animation
@@ -93,6 +86,8 @@ func turn(direction:int, degrees:int):
 # Move forward (1) or back (-1)
 func move(direction:int):
 	# check if can move in direction
+	print("player_direction * int direction = ")
+	print(player_direction, " * ", direction, " = ", player_direction*direction)
 	if can_move(direction * player_direction):
 		prev_player_index = player_index # set previous index to current
 		player_index += direction * player_direction # set current to new
@@ -127,14 +122,16 @@ func grid_location_valid(location:Vector2):
 # steps is the number of steps required to fully move from one position to
 # the next, used to create a choppy walk animation
 func step(steps:int):
-	print("stepping")
+	print("-----------stepping")
 	# calculate distance from starting position to desired position
 	var from = get_grid_position(prev_player_index.x, prev_player_index.y)
 	var to = get_grid_position(player_index.x, player_index.y)
+	print("From = ", from)
+	print("To = ", to)
 	
 	# divide into steps
-	var distance = (from - to)/steps
+	var distance = (to - from)/steps
+	print("Distance = (from - to) / steps = ", distance)
 	
 	# move one step
-	set_velocity(distance)
-	move_and_slide()
+	set_position(get_position()+distance)

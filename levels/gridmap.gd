@@ -5,9 +5,9 @@ func get_grid():
 	var children = get_children()
 	var grid = []
 	for i in range(len(children)):
-		print("getting columns")
+		#print("getting columns")
 		grid.append(get_child_positions(children[i]))
-	print("grid with columns: ", grid)
+	#print("grid with columns: ", grid)
 	return grid
 
 # get the positions of child nodes, as well as their visibility
@@ -23,5 +23,5 @@ func get_child_positions(node):
 	for i in range(len(children)):
 		var v3 = children[i].get_global_position()
 		positions.append(Vector4(v3.x, v3.y, v3.z, float(children[i].visible)))
-	print("columns: ", positions)
+	#print("columns: ", positions)
 	return positions
