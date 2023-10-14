@@ -1,6 +1,6 @@
 [
-	{"Text":"You return the mug to the counter, placing it by the sing as there isn't much room inside for many more dishes.", "Voice":"KB1.wav", "Signal":"NoBedNow.json"},
+	{"Text":"You return the mug to the counter, placing it by the sink as there isn't much room inside for many more dishes.", "Voice":"KB1.wav", "Signal":"NoBedNow.json"},
 	{"Text":"You'll have to do dishes tomorrow.", "Signal":"Bathroom.json"},
 	{"Text":"Then again, you'll still have that assignment. Late or not, you'll need to finish it.", "Signal":"JoselynDoor.json"},
-	{"Text":"That's tomorrow's problem. For now you need sleep.", "Signal":"FrontDoor.json"},
+	{"Text":"That's tomorrow's problem. For now you need sleep.", "Signal":"OldFriends.json"},
 ]
