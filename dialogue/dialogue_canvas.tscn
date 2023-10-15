@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu0iaaj7df8xe"]
+[gd_scene load_steps=6 format=3 uid="uid://bu0iaaj7df8xe"]
 
 [ext_resource type="Script" path="res://dialogue/dialogue_canvas.gd" id="1_bhwnn"]
 [ext_resource type="Texture2D" uid="uid://bp6d86mamynld" path="res://objects/tiles/textures/carpet.jpg" id="2_00gkc"]
 [ext_resource type="Texture2D" uid="uid://dwyujicmru0jd" path="res://icon.svg" id="2_qd6rc"]
+[ext_resource type="AudioStream" uid="uid://n36dkytmooy2" path="res://sound/voices/KB1.wav" id="4_cpldj"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5yqop"]
+streams_count = 1
+stream_0/stream = ExtResource("4_cpldj")
+stream_0/weight = 1.0
 
 [node name="DialogueCanvas" type="CanvasLayer"]
 process_mode = 3
@@ -47,5 +53,6 @@ process_mode = 3
 one_shot = true
 
 [node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_5yqop")
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]

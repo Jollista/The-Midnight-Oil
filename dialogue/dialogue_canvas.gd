@@ -127,10 +127,10 @@ func next_line():
 	if dialogue[current_dialogue].has("SFX"):
 		var effect = "res://sound/effects/" + dialogue[current_dialogue]["SFX"]
 		# if file exists
-		if FileAccess.file_exists(effect):
+		#if FileAccess.file_exists(effect):
 			# load and play it
-			sfx.set_stream(load(effect))
-			sfx.play()
+		sfx.set_stream(load(effect))
+		sfx.play()
 	
 	# change speed of text progression if needed
 	if dialogue[current_dialogue].has("Speed"):
@@ -150,10 +150,10 @@ func next_line():
 				muted = true
 			_:
 				var voice_sound = "res://sound/voices/" + dialogue[current_dialogue]["Voice"]
-				if FileAccess.file_exists(voice_sound):
-					var stream = AudioStreamRandomizer.new() # create AudioStreamRandomizer
-					stream.add_stream(0, load(voice_sound)) # set its stream to character's voice
-					voice.set_stream(stream) # set randomizer as voice's stream
+				#if FileAccess.file_exists(voice_sound):
+				var stream = AudioStreamRandomizer.new() # create AudioStreamRandomizer
+				stream.add_stream(0, load(voice_sound)) # set its stream to character's voice
+				voice.set_stream(stream) # set randomizer as voice's stream
 	
 	if dialogue[current_dialogue].has("Signal"):
 		flag.emit(dialogue[current_dialogue]["Signal"])
