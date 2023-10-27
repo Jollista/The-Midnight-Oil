@@ -116,10 +116,10 @@ func next_line():
 	# Update portrait if specified
 	if dialogue[current_dialogue].has("Image"):
 		var img = "res://dialogue/images/" + dialogue[current_dialogue]["Image"]
-		if FileAccess.file_exists(img): # if specified image exists
-			image.texture = load(img) # set it to specified image
-		else: # no default image
-			image.texture = null # set portrait to null
+		#if FileAccess.file_exists(img): # if specified image exists
+		image.texture = load(img) # set it to specified image
+		#else: # no default image
+		#	image.texture = null # set portrait to null
 	else:
 		image.texture = null # by default, no image
 	
